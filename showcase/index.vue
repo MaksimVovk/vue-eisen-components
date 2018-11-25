@@ -1,6 +1,9 @@
 <template>
   <div class="layout">
-    Привет
-    <router-view />
+    <Layout>
+      <Page>
+        <router-view />
+      </Page>
+    </Layout>
   </div>
 </template>
