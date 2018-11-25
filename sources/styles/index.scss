@@ -1,4 +1,5 @@
 @import 'normalize';
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=cyrillic');
 
 html,
@@ -27,6 +28,8 @@ input {
 }
 
 .custom-scroll {
+  overflow: auto;
+
   &::-webkit-scrollbar-track {
     background-color: rgba(105,105,105,.3);
     border-radius: 15px;
