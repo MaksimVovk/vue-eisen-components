@@ -10,7 +10,7 @@ export default {
     filters.keys().forEach(k => Vue.filter(getModuleName(k), filters(k).default))
 
     const directives = require.context('./directives', true, /\.js$/)
-    directives.keys().forEach(k => Vue.directives(getModuleName(k), filters(k).default))
+    directives.keys().forEach(k => Vue.directive(getName(k, 1), directives(k).default))
 
     registerComponents(Vue)
   }
@@ -21,12 +21,13 @@ function getModuleName (path) {
 }
 
 function registerComponents (Vue) {
-  const getComponentName = path => {
-    const parts = path.split('/')
-    return parts[parts.length - 2]
-  }
   const components = require.context('./components', true, /index\.vue$/)
   components
     .keys()
-    .forEach(k => Vue.component(getComponentName(k), components(k).default))
+    .forEach(k => Vue.component(getName(k, 2), components(k).default))
+}
+
+function getName (path, index = 1) {
+  const parts = path.split('/')
+  return parts[parts.length - index]
 }
