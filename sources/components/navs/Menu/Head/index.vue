@@ -1,6 +1,7 @@
 <template functional>
   <div class="menu__head">
     {{ props.title }}
+    <slot name="after" />
   </div>
 </template>
 
