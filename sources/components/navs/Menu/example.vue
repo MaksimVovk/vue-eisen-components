@@ -1,6 +1,6 @@
 <template>
   <div class="menu-example">
-    <Menu />
+    <Menu :pages="pages" />
   </div>
 </template>
 
@@ -9,3 +9,18 @@
     height: 100%;
   }
 </style>
+
+<script>
+  export default {
+    data () {
+      return {
+        pages: [
+          { path: 'navs/Menu', icon: 'DragIcon', label: 'Menu' },
+          { path: 'buttons/flatbutton', icon: 'DragIcon', label: 'example-2' },
+          { path: 'navs/Menu', icon: 'DragIcon', label: 'example-3' },
+          { path: 'buttons/flatbutton', icon: 'DragIcon', label: 'example-4' },
+        ]
+      }
+    }
+  }
+</script>

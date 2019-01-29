@@ -13,7 +13,17 @@ export default {
     directives.keys().forEach(k => Vue.directive(getName(k, 1), directives(k).default))
 
     registerComponents(Vue)
+    registerIcons(Vue)
   }
+}
+
+function registerIcons (Vue) {
+  const getIconComponentName = path =>
+    path.slice(path.lastIndexOf('/') + 1, path.lastIndexOf('.'))
+  const icons = require.context('./components/icons/Icon', true, /Icon\.vue$/)
+  icons
+    .keys()
+    .forEach(k => Vue.component(getIconComponentName(k), icons(k).default))
 }
 
 function getModuleName (path) {

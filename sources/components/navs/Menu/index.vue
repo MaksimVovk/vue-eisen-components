@@ -8,7 +8,7 @@
       slot="before"
       :title="title"
     />
-    <Body />
+    <Body :definition="pages" />
     <Footer slot="after" />
   </Expander>
 </template>
@@ -22,7 +22,11 @@
     components: { Head, Body, Footer },
     props: {
       title: { type: String, default: 'all simple' },
-    }
+      pages: { type: Array, required: true },
+    },
+    mounted () {
+      console.log(this)
+    },
   }
 </script>
 
