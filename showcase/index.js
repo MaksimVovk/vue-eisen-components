@@ -1,28 +1,41 @@
-import { map, groupBy } from 'lodash'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { groupBy, map } from 'lodash'
 
-import layout from './index.vue'
-import ui from '../sources'
+import kit from '../src'
+import { AppLayout } from '../src'
+
 
 Vue.use(VueRouter)
-Vue.use(ui)
+Vue.use(kit)
 
-const context = require.context('../sources/components', true, /example\.vue$/)
+Vue.component('AppLayout', AppLayout)
+
+const context = require.context('../src/components', true, /example\.vue$/)
 
 const items = context.keys().map(k => {
-  const [category, name] = k.replace(/\.vue$/, '').split('/').slice(1)
-  return ({ category, name, component: context(k).default })
+  const [category, ...names] = k.replace(/\.vue$/, '').split('/').slice(1)
+  return ({
+    category,
+    name: names
+      .filter(n => n !== 'example')
+      .map(n => n.replace('.example', ''))
+      .join(': '),
+    component: context(k).default,
+  })
 })
 
-const folders = map(groupBy(items, it => it.category), (pages, name) => ({ name, pages }))
+const folders = map(groupBy(items, it => it.category), (pages, name) => {
+  return ({ name, pages })
+})
 
 const routes = folders.map(f => ({
+  icon: 'eye',
   path: `/${f.name}`,
   label: f.name,
   component: { render: h => h('router-view') },
   children: f.pages.map(p => ({
-    path: p.name,
+    path: `/${f.name}/${p.name}`,
     component: p.component,
     label: p.name,
   })),
@@ -30,10 +43,17 @@ const routes = folders.map(f => ({
 
 const router = new VueRouter({ mode: 'history', routes })
 
-Vue.component('layout', layout)
-
-new Vue({
-  el: '#root',
+new Vue({ // eslint-disable-line no-new
+  el: '#app',
   router,
-  render: h => h('layout'),
+  mounted () {
+    document.title = 'vue-eisen-components'
+  },
+  render (h) {
+    return h('AppLayout', {
+      props: {
+        pages: routes
+      }
+    })
+  },
 })
