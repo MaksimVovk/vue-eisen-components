@@ -1,6 +1,6 @@
 files:
   include:
-    - 'src/**/*.s+(a|c)ss'
+    - 'src/components/**/*.s+(a|c)ss'
 
 rules:
   placeholder-in-extend:
