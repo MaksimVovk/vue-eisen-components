@@ -8,25 +8,29 @@
         {{ title }}
       </div>
       <div class="example-description">
-        {{ description }}
+        <div class="description__title">
+          Description
+        </div>
+        <div class="description__text">
+          {{ description }}
+        </div>
       </div>
       <slot />
     </Block>
-    <!-- <Block
+  </div>
+  <!-- <Block
       width="250"
       class="example-tools"
     >
       Tools
     </Block> -->
-  </div>
 </template>
 
 <script>
-  import Container from '../../misc/Container'
   import Block from '../../misc/Block'
 
   export default {
-    components: { Container, Block },
+    components: { Block },
     props: {
       title: { type: String },
       description: { type: String },
@@ -46,17 +50,26 @@
     }
 
     &-description {
-      font-size: 20px;
-      font-weight: 400;
+      margin-top: 15px;
+      margin-bottom: 30px;
+
+      .description__title {
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .description__text {
+        font-weight: 400;
+        line-height: 1.2;
+
+        margin-top: 10px;
+
+        color: #777;
+      }
     }
 
     &-container {
-      flex: 1;
-      margin-right: 10px;
-    }
-
-    &-description {
-      flex: 0;
+      width: 100%;
     }
 
     &-tools {
