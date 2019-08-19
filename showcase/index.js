@@ -3,13 +3,15 @@ import VueRouter from 'vue-router'
 import { groupBy, map } from 'lodash'
 
 import kit from '../src'
-import { AppLayout } from '../src'
+import { AppLayout, Example, ExampleBlock } from '../src'
 
 
 Vue.use(VueRouter)
 Vue.use(kit)
 
 Vue.component('AppLayout', AppLayout)
+Vue.component('Example', Example)
+Vue.component('ExampleBlock', ExampleBlock)
 
 const context = require.context('../src/components', true, /example\.vue$/)
 

@@ -1,7 +1,12 @@
 <template>
-  <div class="example">
-    <Button />
-  </div>
+  <Example
+    title="Button"
+    description="Компонент Button. Представлен 4-мя видами, за тип кнопки отвечает атрибут look (default, flat, link, outline)."
+  >
+    <ExampleBlock>
+      <Button />
+    </ExampleBlock>
+  </Example>
 </template>
 
 <script>
