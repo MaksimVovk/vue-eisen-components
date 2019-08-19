@@ -2,7 +2,7 @@
   <div class="example">
     <Block
       flex="1"
-      class="example-container"
+      class="example-container custom-scroll"
     >
       <div class="example-title">
         {{ title }}
@@ -43,6 +43,7 @@
     display: flex;
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
+    counter-reset: block;
 
     &-title {
       font-size: 50px;

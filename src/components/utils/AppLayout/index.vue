@@ -35,7 +35,8 @@
 
     &__nav {
       flex: 0;
-      background-color: #303f9f;
+      width: 250px;
+      background-color: #212a39;
     }
 
     &__body {
@@ -48,17 +49,17 @@
       min-width: 0;
       min-height: 0;
 
-      padding: 10px;
+      padding: 20px;
       box-sizing: border-box;
 
       overflow: hidden;
     }
 
     &_theme-light {
-      background-color: #fff;
+      background-color: #f5f6fa;
     }
 
-    &_theme-light {
+    &_theme-dark {
       background-color: #fff;
     }
 
