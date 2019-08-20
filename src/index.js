@@ -1,5 +1,5 @@
-
 export * from './components'
+
 export default {
   install (Vue) {
     require('./styles/index.scss')

@@ -12,6 +12,7 @@
           :size="size"
           :palette="palette"
           :disabled="c.disabled"
+          @click="testClick"
         >
           Example
         </Button>
@@ -34,6 +35,11 @@
           { id: 2, title: 'Simple small button' },
           { id: 3, title: 'Simple disabled button', disabled: true },
         ]
+      }
+    },
+    methods: {
+      testClick () {
+        alert('It`s work')
       }
     }
   }

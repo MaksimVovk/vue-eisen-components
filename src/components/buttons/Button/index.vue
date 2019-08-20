@@ -4,22 +4,20 @@
       'button_disabled': disabled,
       'button_roud': roud,
     }]"
+    @click="$emit('click')"
   >
     <slot />
   </div>
 </template>
 
 <script>
-  const sizes = ['small', 'big']
-  const palettes = ['primary', 'success', 'warning', 'danger', 'info']
+  import { appearanceMixin } from '../../../mixins'
 
   export default {
+    mixins: [appearanceMixin()],
     props: {
-      size: { type: String, default: 'big', validator: value => sizes.includes(value) },
-      palette: { type: String, default: 'primary', validator: value => palettes.includes(value) },
-      disabled: { type: Boolean, default: false },
       roud: { type: Boolean, default: false },
-    }
+    },
   }
 </script>
 
@@ -43,7 +41,12 @@
 
       &:not(.button_disabled):hover {
         opacity: .7;
-        box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.4);
+      }
+
+      &:not(.button_disabled):active {
+        opacity: .8;
+        box-shadow: none;
       }
     }
 
