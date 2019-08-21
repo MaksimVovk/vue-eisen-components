@@ -1,11 +1,13 @@
 <template>
-  <div :class="['field', `field_palette-${palette}`, {
-    'field_filled': filled,
-    'field_focused': focused,
-    'field_disabled': disabled,
-    'field_readonly': readonly,
-    [`field_size-${size}`]: size,
-  }]">
+  <div
+    :class="['field', `field_palette-${palette}`, {
+      'field_filled': filled,
+      'field_focused': focused,
+      'field_disabled': disabled,
+      'field_readonly': readonly,
+      [`field_size-${size}`]: size,
+    }]"
+  >
     <slot />
   </div>
 </template>

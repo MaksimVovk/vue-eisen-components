@@ -32,8 +32,8 @@
   export default {
     components: { Block },
     props: {
-      title: { type: String },
-      description: { type: String },
+      title: { type: String, default: () => null },
+      description: { type: String, default: () => null },
     }
   }
 </script>

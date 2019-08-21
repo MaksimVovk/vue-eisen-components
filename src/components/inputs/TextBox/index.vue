@@ -27,14 +27,16 @@
   import { appearanceMixin } from '../../../mixins'
   import { Field } from '../../appearance'
 
+  const types = ['text', 'password']
+
   export default {
-    mixins: [appearanceMixin()],
     components: { Field },
+    mixins: [appearanceMixin()],
     props: {
       value: { type: [String, Number], default: null },
       focused: { type: Boolean, default: false },
       readonly: { type: Boolean, default: false },
-      type: { type: String },
+      type: { type: String, default: 'text', validator: value => types.includes(value) }
     },
     data () {
       return {

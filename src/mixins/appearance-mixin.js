@@ -1,4 +1,4 @@
-export default function builder (params = {}) {
+export default function builder () {
   const sizes = ['small', 'big']
   const palettes = ['primary', 'success', 'warning', 'danger', 'info']
 

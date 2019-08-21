@@ -27,6 +27,11 @@
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.21"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
