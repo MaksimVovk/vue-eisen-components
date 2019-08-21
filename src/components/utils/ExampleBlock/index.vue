@@ -14,7 +14,7 @@
     font-family: 'Source Sans Pro', sans-serif;
 
     border-top: 1px solid;
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, .1);
 
     &:not(:first-child) {
       margin-top: 25px;

@@ -20,12 +20,12 @@
       them: { type: String, default: () => 'regular', validator: value => types.includes(value) },
       shadow: { type: Boolean, default: () => false },
       animation: { type: Boolean, default: () => false },
-      width: { type: [String, Number] },
+      width: { type: [String, Number], default: () => null },
     },
     computed: {
       blockStyles () {
         return {
-          width: `${this.width}px`,
+          width: this.width ? `${this.width}px` : null,
         }
       }
     }
@@ -37,7 +37,7 @@
     $block: &;
 
     background-color: #fff;
-    transition: box-shadow 0.2s ease-in;
+    transition: box-shadow .2s ease-in;
 
     &_padding-light {
       padding: 5px;
@@ -64,14 +64,14 @@
     }
 
     &_shadow:not(#{$block}_animation) {
-      box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 3px 12px 0 rgba(0, 0, 0, .15);
     }
 
     &_animation {
       cursor: pointer;
 
       &:hover {
-        box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 3px 12px 0 rgba(0, 0, 0, .15);
       }
     }
 

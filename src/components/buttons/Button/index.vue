@@ -41,7 +41,7 @@
 
       &:not(.button_disabled):hover {
         opacity: .7;
-        box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.4);
+        box-shadow: 0 3px 12px 0 rgba(0, 0, 0, .4);
       }
 
       &:not(.button_disabled):active {
@@ -57,7 +57,7 @@
     color: #fff;
     cursor: pointer;
 
-    transition: 0.2s ease-in;
+    transition: .2s ease-in;
 
     &_size {
       &-big {
