@@ -19,7 +19,7 @@
       filled: { type: Boolean, default: false },
       focused: { type: Boolean, default: false },
       readonly: { type: Boolean, default: false },
-    }
+    },
   }
 </script>
 
@@ -54,6 +54,21 @@
     background-color: $color;
 
     &:hover:not(.field_disabled) {
+      background-color: #fff;
+      box-shadow: 0 0 10px 0 $border;
+      border-color: $border;
+    }
+
+    .field_focused {
+      background-color: red;
+    }
+  }
+
+  @mixin field-focused ($color, $border) {
+    border-color: $border;
+    background-color: $color;
+
+    &_focused:not(.field_disabled) {
       background-color: #fff;
       box-shadow: 0 0 10px 0 $border;
       border-color: $border;
