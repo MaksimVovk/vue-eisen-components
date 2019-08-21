@@ -12,7 +12,6 @@
 
 <script>
   const types = ['light', 'regular', 'bold']
-  const palette = ['success', 'danger', 'warning', 'primary']
 
   export default {
     props: {

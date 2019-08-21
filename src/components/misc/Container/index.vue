@@ -10,8 +10,8 @@
 <script>
   export default {
     props: {
-      columns: { type: Number },
-      rows: { type: Number },
+      columns: { type: Number, default: () => null },
+      rows: { type: Number, default: () => null },
     },
     computed: {
       containerStyles () {
