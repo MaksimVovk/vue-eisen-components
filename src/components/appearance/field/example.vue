@@ -22,7 +22,7 @@
         options: {
           size: 'big',
           palette: 'primary',
-          disabled: false,
+          disabled: true,
           filled: false,
           focused: false,
           readonly: false,

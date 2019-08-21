@@ -30,7 +30,7 @@
     danger: #fe5461,
     warning: #fec400,
     info: #13cae1,
-    primary: #4c84ff,
+    primary: #4c84ff
   );
 
   $colors: (
@@ -53,22 +53,8 @@
     border-color: $border;
     background-color: $color;
 
-    &:hover:not(.field_disabled) {
-      background-color: #fff;
-      box-shadow: 0 0 10px 0 $border;
-      border-color: $border;
-    }
-
-    .field_focused {
-      background-color: red;
-    }
-  }
-
-  @mixin field-focused ($color, $border) {
-    border-color: $border;
-    background-color: $color;
-
-    &_focused:not(.field_disabled) {
+    &:hover:not(.field_disabled),
+    &.field_focused:not(.field_disabled) {
       background-color: #fff;
       box-shadow: 0 0 10px 0 $border;
       border-color: $border;
