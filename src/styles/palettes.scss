@@ -1,1 +1,19 @@
-$red: red;
+$main: (
+  success: #29cc97,
+  danger: #fe5461,
+  warning: #fec400,
+  info: #13cae1,
+  primary: #4c84ff
+);
+
+$aux: (
+  success: #ccf8e9,
+  danger: #fad3d6,
+  warning: #fcf3d4,
+  info: #cef1f6,
+  primary: #e5ecfa
+);
+
+$text: (
+  primary: #464646
+);

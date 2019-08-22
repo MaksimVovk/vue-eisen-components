@@ -1,8 +1,18 @@
+import Hoist from './directives/hoist'
+import Focus from './directives/focus'
+import ScrollOutside from './directives/scroll-outside'
+import OutsideEvents from './directives/click-outside'
+
 export * from './components'
 
 export default {
   install (Vue) {
     require('./styles/index.scss')
+
+    Vue.directive('hoisted', Hoist)
+    Vue.directive('focus', Focus)
+    Vue.directive('scroll-outside', ScrollOutside)
+    Vue.directive('click-outside', OutsideEvents)
 
     registerFilters(Vue)
   }
