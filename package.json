@@ -1,7 +1,6 @@
 {
   "name": "vue-eisen-components",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
