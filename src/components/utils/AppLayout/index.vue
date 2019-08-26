@@ -18,6 +18,10 @@
           {{ p.label }}
         </router-link>
       </router-link>
+      <div
+        class="logut"
+        @click="$emit('logout')"
+      >LOGUT</div>
     </div>
     <div class="app-layout__body">
       <slot>
