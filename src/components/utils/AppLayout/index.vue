@@ -21,7 +21,9 @@
       <div
         class="logut"
         @click="$emit('logout')"
-      >LOGUT</div>
+      >
+        LOGUT
+      </div>
     </div>
     <div class="app-layout__body">
       <slot>
